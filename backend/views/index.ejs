@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Focus Mode</title>
+  </head>
+  <body>
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <div class="login">
+          <div class="form-login">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email address"
+              required
+            />
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="pass"
+              name="password"
+              placeholder="Must have at least 6 characters"
+            />
+
+            <button class="sign-in-btn" onclick="onLogin()" id="login_button">Log in</button>
+            <button class="sign-in-btn" onclick="onRegister()" id = "reg_button">Sign up</button>
+          </div>
+
+          <div class="new-account">
+            <span class="sign-up-link">New to Focus Mode?</span>
+            <span id="change-sign-in">Sign up</span>
+            <p class="error-msg" id="error"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <h1>Focus Mode</h1>
+      <p>- Custom background app to help you focus</p>
+    </div>
+
+    <!-- Fullscreen background -->
+    <div id="background-container"></div>
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/loginAnimation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+#background-container {
+  z-index: -999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+  height: 100%;
+  width: 100%;
+}
+
+.project {
+  max-width: 350px;
+  position: absolute;
+  bottom: 7.5em;
+  left: 3em;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.project h1 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.project p {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.2em;
+  margin-top: 0.5rem;
+}
+
+.modal {
+  color: #fff;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  color: #000;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1em;
+  /* border-radius: 0.5rem; */
+  width: 400px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalOpen;
+  animation-duration: 1s;
+}
+
+.modal-content .form-login {
+  margin-top: 7em;
+}
+
+.modal-content .form-login label {
+  display: block;
+  margin: 1.5rem 0 0.1rem 0.1rem;
+}
+
+.modal-content .form-login input {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.2rem;
+  padding: 0.6rem 0.4rem;
+  width: 100%;
+}
+
+.modal-content .sign-in-btn {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 2em;
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #797fda;
+  border: none;
+}
+
+.modal-content .sign-in-btn:hover {
+  opacity: 0.9;
+}
+
+.modal-content .error-msg {
+  margin-top: 2em;
+  color: #cb3066;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.modal-content .new-account {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 3em;
+}
+
+#change-sign-in {
+  cursor: pointer;
+  color: #797fda;
+  text-decoration: underline;
+}
+
+#change-sign-in:hover {
+  color: #cb3066;
+}
+@media only screen and (max-width: 1000px) {
+  .project {
+    max-width: 350px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .modal-content {
+    width: 100%;
+  }
+
+  .project {
+    z-index: 1000;
+    position: absolute;
+    bottom: 2em;
+    left: 15%;
+  }
+}

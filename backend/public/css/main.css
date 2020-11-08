@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@900&display=swap');
+
+:root {
+  --background-img: url('/img/autumn-dreams-by-joeyjazz-1920×1080.jpg');
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+}
+
+#background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--background-img) no-repeat center fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+
+  /* Make background below everything else */
+  z-index: -999;
+}
+
+.top-header {
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 1rem 0.5rem;
+  color: #fff;
+}
+
+.header-btns {
+  margin-top: 1em;
+}
+
+.log-out {
+  cursor: pointer;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.modal-image-btn,
+.focus-btn,
+.add-btn {
+  display: block;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.focus-btn {
+  margin-top: 2em;
+}
+
+.modal-image-btn:hover,
+.focus-btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fullscreen-toggle,
+.log-out {
+  font-size: 2em;
+}
+
+.fullscreen-toggle:hover,
+.log-out:hover {
+  color: #f37369;
+}
+
+.music-controls {
+  position: absolute;
+  right: 6em;
+  top: 1em;
+  padding: 1em;
+  border-radius: 0.7rem;
+  width: 120px;
+  display: flex;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+}
+
+.music-controls:hover {
+  transition: background-color 0.2s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.music-controls div {
+  margin: 0 auto;
+  /* margin-right: 1em; */
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.music-controls div:hover {
+  color: #f37369;
+}
+
+#stop-clock {
+  font-family: 'Big Shoulders Inline Display', cursive;
+  margin-top: 3em;
+  color: #000;
+  font-size: 4.5em;
+  text-align: center;
+  /* text-decoration: underline; */
+}
+
+#stop-clock.hidden {
+  display: none;
+}
+
+#stop-clock span {
+  border-bottom: 5px solid #fff;
+  /* border: 2px solid #000; */
+}
+
+.modal {
+  color: #fff;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  position: relative;
+  height: 500px; /* Temp */
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2em 3em;
+  margin: 10% auto;
+  width: 75%;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalOpen;
+  animation-duration: 1s;
+}
+
+.modal-content .images-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 288px);
+  grid-gap: 20px;
+}
+
+.images-container .box {
+  cursor: pointer;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #f37369;
+}
+
+.images-container .box.img-1{
+  background-image: url('/img/autumn-dreams-by-joeyjazz-1920×1080.jpg');
+}
+
+.images-container .box.img-2{
+  background-image: url('/img/city-art.jpg');
+}
+.images-container .box.img-3{
+  background-image: url('/img/default-bg.png');
+}
+
+.images-container .box:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+
+.images-container .box img {
+  width: 100%;
+}
+
+.modal-content .close-btn {
+  cursor: pointer;
+  font-size: 2em;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+@media only screen and (max-width: 1600px) {
+  .modal-content .images-container {
+    grid-template-columns: repeat(auto-fill, 192px);
+  }
+
+  .modal-content .box {
+    height: 108px;
+  }
+
+  .header-btns button {
+    margin-top: 0.1em;
+    margin-right: 1em;
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .modal-content {
+    margin-top: 15%;
+  }
+
+  .modal-content .images-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content .box {
+    width: 288px;
+  }
+
+  .top-header {
+    padding-top: 0.75em;
+  }
+
+  .header-btns button {
+    margin-top: 0em;
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

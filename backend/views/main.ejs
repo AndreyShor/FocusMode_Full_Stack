@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Focus Mode</title>
+    <script
+      src="https://kit.fontawesome.com/bf1bd22d88.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="header-btns">
+        <button type="button" class="modal-image-btn">Images</button>
+        <button type="button" class="focus-btn">Focus</button>
+        <button type="button" class="add-btn" id="add-btn">Add Image</button>
+        <input type="file" accept="image/*" id="image" name="image" style="display: none;"/>
+      </div>
+
+      <div class="music-controls">
+        <div class="play-music">
+          <i class="far fa-play-circle"></i>
+        </div>
+        <div class="pause-music">
+          <i class="far fa-pause-circle"></i>
+        </div>
+      </div>
+
+      <div class="log-out">
+        <i class="fas fa-sign-out-alt" onclick="onExit()"></i>
+      </div>
+    </header>
+
+    <div class="image-list hidden">
+      <div id="image-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <div class="images-container">
+            <div class="box img-1"  onClick="changeBackground(this.style.backgroundImage)">
+            </div>
+            <% for (var i = 0; i < ImageList.length; i++)  { %>
+            <div class="box img-<%= i+2 %>" style="background-image: url('<%= ImageList[i] %>');" onClick="changeBackground(this.style.backgroundImage)"></div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="stop-clock" class="hidden">
+      <span class="clock-display" style="color: wheat;">00:00</span>
+    </div>
+
+    <div class="bg-music">
+      <iframe
+        width="0"
+        height="0"
+        src="https://www.youtube.com/embed/lTRiuFIWV54"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Fullscreen background -->
+    <div id="background-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
